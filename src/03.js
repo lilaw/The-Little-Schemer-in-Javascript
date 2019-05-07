@@ -10,10 +10,10 @@ function rember(a, lat) {
 }
 
 // builds another list composed of the first S-expression of each internal list.
-function first(l) {
+function firsts(l) {
   let [foremost, ...rest] = l;
   if (isNull(foremost)) return [];
-  return [...foremost.slice(0, 1), ...first(rest)];
+  return [...foremost.slice(0, 1), ...firsts(rest)];
 }
 
 // return new list inserted to the right of the first occurrence of old
@@ -75,4 +75,4 @@ function multisubst(fresh, old, lat) {
   if (isEq(old, first)) return [fresh, multisubst(fresh, old, rest)]
   return [first, ...multisubst(fresh, old, rest)]
 }
-export { rember, first, insertR, insertL, subst, subst2, multirember, multiinsertR, multiinsertL, multisubst};
+export { rember, firsts, insertR, insertL, subst, subst2, multirember, multiinsertR, multiinsertL, multisubst};

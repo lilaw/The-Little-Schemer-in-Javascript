@@ -1,4 +1,4 @@
-import { rember, first, insertR, subst, subst2, multirember, multiinsertR } from "../03";
+import { rember, firsts, insertR, subst, subst2, multirember, multiinsertR } from "../03";
 
 test("rember should remove first occurrence atom in a list", () => {
   let a = "cup";
@@ -13,7 +13,7 @@ test("rember should remove first occurrence atom in a list", () => {
   expect(rember(noA, list)).toEqual(list);
 });
 
-test("first return a array of first element", () => {
+test("firsts return a array of first element", () => {
   let l = [
     ["apple", "peach", "pumpkin"],
     ["plum", "pear", "cherry"],
@@ -22,7 +22,7 @@ test("first return a array of first element", () => {
   ];
   let listOfFirstEle = ["apple", "plum", "grape", "bean"]
 
-  expect(first(l)).toEqual(listOfFirstEle)
+  expect(firsts(l)).toEqual(listOfFirstEle)
 });
 
 
